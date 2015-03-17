@@ -100,7 +100,7 @@ With verbose logging checked:
 
 ## Credit
 
-This application includes portions of Android Bluetooth source from AOSP in order to obtain constant names for values that are provided in Bluetooth broadbast intent extras.
+Portions of Android Bluetooth source from AOSP were consulted in order to obtain constant names for values that are provided in Bluetooth broadbast intent extras.
 
 ## License
 
@@ -108,7 +108,7 @@ This project is governed by the Apache 2.0 license.
 
 ----
 
-Copyright 2015 PhoneDeveloper LLC
+Copyright (C) 2015 PhoneDeveloper LLC
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
