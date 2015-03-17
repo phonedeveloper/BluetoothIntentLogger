@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Bluetooth Intent Logger</string>
+    <string name="title_activity_about">Bluetooth Intent Logger</string>
+    <string name="about">\nTo view Intents, attach this device to your development machine. Run\n
+\n
+$ adb logcat -s BluetoothIntentLogger\n
+\n
+to see messages from this app. Or,\n
+\n
+$ adb logcat | grep /Bluetooth\n
+\n
+will show this app\'s messages and many other Bluetooth messages from the system.\n
+\n
+Extra field names are extracted from their corresponding classes using reflection. If you see a name that isn\'t found in the Android documentation, it might be a custom field added by the device manufacturer. Verify that an action or extra shown by this application appears in the official documentation before relying on it!</string>
+    <string name="verbose_checkbox_label">Verbose log messages</string>
+    <string name="preference_file_key">BluetoothIntentLoggerPreferences</string>
+    <string name="preference_verbosity_key">verbosity</string>
+
+</resources>
