@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 PhoneDeveloper LLC
+ * Copyright (C) 2015 PhoneDeveloper LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -742,23 +742,26 @@ public class BluetoothHandler {
                         case "android.bluetooth.BluetoothClass":
                             // Display the name of this device's class major and device type
                             BluetoothClass deviceClass = (BluetoothClass) value;
-                            int major = deviceClass.getMajorDeviceClass();
-                            int minor = deviceClass.getDeviceClass();
-                            if (sDeviceClassMajorLookupMap.containsKey(major)) {
-                                valueString = sDeviceClassMajorLookupMap.get(major);
-                                if (sDeviceClassMinorLookupMap.containsKey(minor)) {
-                                    valueString += "/" + sDeviceClassMinorLookupMap.get(minor);
+                            int majorDeviceClassValue = deviceClass.getMajorDeviceClass();
+                            int deviceClassValue = deviceClass.getDeviceClass();
+                            if (sDeviceClassMajorLookupMap.containsKey(majorDeviceClassValue)) {
+                                valueString = sDeviceClassMajorLookupMap.get(majorDeviceClassValue);
+                                if (sDeviceClassMinorLookupMap.containsKey(deviceClassValue)) {
+                                    valueString += "/"
+                                            + sDeviceClassMinorLookupMap.get(deviceClassValue);
                                 } else {
                                     valueString += "/unrecognized";
                                 }
                             } else {
                                 valueString = "unrecognized";
-                                if (sDeviceClassMinorLookupMap.containsKey(minor)) {
-                                    valueString += "/" + sDeviceClassMinorLookupMap.get(minor);
+                                if (sDeviceClassMinorLookupMap.containsKey(deviceClassValue)) {
+                                    valueString += "/"
+                                            + sDeviceClassMinorLookupMap.get(deviceClassValue);
                                 } else {
                                     valueString += "/unrecognized";
                                 }
                             }
+                            break;
                         default:
                             valueString = "(not parsed)";
                             value = "";
