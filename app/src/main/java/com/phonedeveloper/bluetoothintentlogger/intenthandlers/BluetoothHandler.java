@@ -650,6 +650,9 @@ public class BluetoothHandler {
         // Log the action.
         //
         Log.d(TAG, className + "." + actionName);
+        if (verbose) {
+            Log.d(TAG, "Action: " + action);
+        }
 
         //
         // Now, find and and parse any Extras.
