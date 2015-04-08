@@ -676,8 +676,8 @@ public class BluetoothHandler {
                 // Get the value associated with this key, and its data type.
                 //
                 Object value = extras.get(key);              // Get the value for this key
-                if (value != null) {                         // no value?
-                    type = value.getClass().getName();    // Get the type of the value
+                if (value != null) {                         // value provided?
+                    type = value.getClass().getName();       // Get the type of the value
 
                     // Use the action, key and value strings to try to find the extra's value
                     // as described in the Bluetooth API documentation. How we do this depends on
@@ -783,7 +783,11 @@ public class BluetoothHandler {
                          * a Samsung extra.
                          */
                         if (sDeviceExtraNameLookupMap.containsKey(key)) {
-                            key = sDeviceExtraNameLookupMap.get(key);
+                            if (!verbose) {
+                                key = sDeviceExtraNameLookupMap.get(key);
+                            } else {
+                                key = sDeviceExtraNameLookupMap.get(key) + " (" + key + ")";
+                            }
                         }
                         break;                               // yes, rewrite key, done
                     }
